@@ -5,7 +5,7 @@ set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command completed with exit code $?."' EXIT
 
-ROOT="$(realpath -mq ${BASH_SOURCE[0]}/../../..)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"/..
 
 export QUICKCLUSTERKEY=${2:-~/.ssh/id_rsa}
 export NAMESPACE=openshift-nfs-storage
