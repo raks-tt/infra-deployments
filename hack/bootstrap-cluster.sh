@@ -3,7 +3,7 @@
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"/..
 
 main() {
-    local mode keycloak toolchain obo eaas
+    local mode keycloak toolchain obo eaas power
     while [[ $# -gt 0 ]]; do
         key=$1
         case $key in
@@ -21,6 +21,10 @@ main() {
             ;;
         --eaas | -e)
             eaas="--eaas"
+            shift
+            ;;
+        --power-monitoring | -p)
+            power="--power-monitoring"
             shift
             ;;
         preview | upstream)
@@ -62,7 +66,7 @@ main() {
         fi
         ;;
     "preview")
-        $ROOT/hack/preview.sh $toolchain $keycloak $obo $eaas
+        $ROOT/hack/preview.sh $toolchain $keycloak $obo $eaas $power
         ;;
     esac
 

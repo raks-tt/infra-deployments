@@ -11,6 +11,7 @@ function print_help() {
   echo "  --keycloak   (only in preview mode) Configure the toolchain operator to use keycloak deployed on the cluster"
   echo "  --obo        (only in preview mode) Install Observability operator and Prometheus instance for federation"
   echo "  --eaas       (only in preview mode) Install environment as a service components"
+  echo "  --power-monitoring (only in preview mode) Install Power Monitoring operator"
   echo
   echo "Example usage: \`$0 --toolchain --keycloak --obo --eaas"
 }
@@ -19,6 +20,7 @@ TOOLCHAIN=false
 KEYCLOAK=false
 OBO=false
 EAAS=false
+POWER=false
 
 while [[ $# -gt 0 ]]; do
   key=$1
@@ -37,6 +39,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --eaas)
       EAAS=true
+      shift
+      ;;
+    --power-monitoring)
+      POWER=true
       shift
       ;;
     -h|--help)
@@ -135,6 +141,11 @@ if $EAAS; then
   echo "Enabling EaaS cluster role"
   yq -i '.components += ["../../../k-components/assign-eaas-role-to-local-cluster"]' \
     $ROOT/argo-cd-apps/base/local-cluster-secret/all-in-one/kustomization.yaml
+fi
+
+if $POWER; then
+  echo "Enabling Power Monitoring operator"
+  yq -i '.resources += ["power-monitoring/"]' $ROOT/components/power-monitoring/kustomization.yaml
 fi
 
 # delete argoCD applications which are not in DEPLOY_ONLY env var if it's set
