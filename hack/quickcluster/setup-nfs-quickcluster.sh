@@ -5,7 +5,7 @@ set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command completed with exit code $?."' EXIT
 
-ROOT="$(realpath -mq ${BASH_SOURCE[0]}/../../..)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"/
 
 export QUICKCLUSTERKEY=${2:-~/.ssh/id_rsa}
 export NAMESPACE=openshift-nfs-storage
@@ -72,12 +72,12 @@ oc create namespace $NAMESPACE
 oc label namespace $NAMESPACE "openshift.io/cluster-monitoring=true" --overwrite=true
 oc project $NAMESPACE
 
-oc apply -f $ROOT/hack/quickcluster/templates/rbac.yaml
+oc apply -f $ROOT/templates/rbac.yaml
 oc adm policy add-scc-to-user hostmount-anyuid system:serviceaccount:$NAMESPACE:nfs-client-provisioner
 export REMOTE
-envsubst < $ROOT/hack/quickcluster/templates/deployment.yaml | oc apply -f -
+envsubst < $ROOT/templates/deployment.yaml | oc apply -f -
 oc -n $NAMESPACE wait --for=condition=ready pod --all
-oc apply -f $ROOT/hack/quickcluster/templates/storageClass.yaml
+oc apply -f $ROOT/templates/storageClass.yaml
 
 unset NAMESPACE
 unset QUICKCLUSTERKEY
