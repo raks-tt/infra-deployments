@@ -10,4 +10,4 @@ spec:
       dashboards: "appstudio-grafana"
   configMapRef:
     name: grafana-dashboard-power-monitoring
-    key: power-monitoring.json
+    key: kepler.json
