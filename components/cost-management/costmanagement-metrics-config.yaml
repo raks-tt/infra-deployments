@@ -12,7 +12,6 @@ metadata:
 spec:
   authentication:
     type: token
-    token_url: 'https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token'
   packaging:
     max_reports_to_store: 30
     max_size_MB: 100
@@ -23,12 +22,10 @@ spec:
     disable_metrics_collection_resource_optimization: false
     service_address: 'https://thanos-querier.openshift-monitoring.svc:9091'
     skip_tls_verification: false
-    prometheus_configured: true
-    prometheus_connected: true
   source:
     check_cycle: 1440
     create_source: true
-    name: ''
+    name: 'konflux-cost-cluster-test'
     sources_path: /api/sources/v1.0/
   upload:
     upload_cycle: 360

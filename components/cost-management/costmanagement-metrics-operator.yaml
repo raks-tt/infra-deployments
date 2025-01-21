@@ -17,6 +17,8 @@ metadata:
     olm.providedAPIs: CostManagementMetricsConfig.v1beta1.costmanagement-metrics-cfg.openshift.io
 spec:
   upgradeStrategy: Default
+  targetNamespaces:
+    - costmanagement-metrics-operator
 ---
 # Subscription for costmanagement-metrics-operator
 apiVersion: operators.coreos.com/v1alpha1
