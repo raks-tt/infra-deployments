@@ -74,7 +74,7 @@ customConfig:
       encoding:
         codec: "text"
       key_prefix: "/logs/{{ `{{ .namespace }}` }}/{{`{{ .result }}`}}/{{`{{ .taskRunUID }}`}}/{{`{{ .container }}`}}"
-      filename_time_format: ""
+      filename_time_format: "-%s"
       filename_append_uuid: false
 env:
   - name: AWS_ACCESS_KEY_ID
@@ -109,6 +109,9 @@ tolerations:
     key: konflux-ci.dev/workload
     operator: Equal
     value: konflux-tenants
+image:
+  repository: quay.io/openshift-pipeline/vector
+  tag: 0.45.0-distroless-libc
 securityContext:
   allowPrivilegeEscalation: false
   capabilities:

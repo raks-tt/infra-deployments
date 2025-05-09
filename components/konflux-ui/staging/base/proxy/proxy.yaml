@@ -80,6 +80,10 @@ spec:
             echo \
               "proxy_pass ${TEKTON_RESULTS_URL:?tekton results url must be provided};" \
               > /mnt/nginx-generated-config/tekton-results.conf
+            
+            echo \
+              "proxy_pass ${KUBEARCHIVE_URL:?kubearchive url must be provided};" \
+              > /mnt/nginx-generated-config/kubearchive.conf
 
         volumeMounts:
         - name: nginx-generated-config
@@ -157,23 +161,6 @@ spec:
             mountPath: /mnt/nginx-generated-config
           - name: static-content
             mountPath: /opt/app-root/src/static-content
-        securityContext:
-          readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          runAsUser: 1001
-      - image: quay.io/konflux-ci/workspace-manager@sha256:48df30520a766101473e80e7a4abbf59ce06097a5f5919e15075afaa86bd1a2d
-        name: workspace-manager
-        ports:
-          - containerPort: 5000
-            name: web
-            protocol: TCP
-        resources:
-          limits:
-            cpu: 300m
-            memory: 256Mi
-          requests:
-            cpu: 30m
-            memory: 128Mi
         securityContext:
           readOnlyRootFilesystem: true
           runAsNonRoot: true
@@ -285,6 +272,14 @@ rules:
 - apiGroups: ["authorization.k8s.io"]
   resources: ["localsubjectaccessreviews"]
   verbs: ["create"]
+- apiGroups:  # TEMPORARY SOLUTION TO UNBLOCK KONFLUX-166 WHILE KAR-510 IS NOT SOLVED
+    - "appstudio.redhat.com"
+  resources:
+    - "snapshots"
+    - "releases"
+  verbs:
+    - "list"
+    - "get"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding

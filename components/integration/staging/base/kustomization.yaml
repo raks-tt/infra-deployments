@@ -3,20 +3,20 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../base/external-secrets
-- https://github.com/konflux-ci/integration-service/config/default?ref=fcb8e9430917906e488066bdf42e07dff7cb1818
-- https://github.com/konflux-ci/integration-service/config/snapshotgc?ref=fcb8e9430917906e488066bdf42e07dff7cb1818
+- https://github.com/konflux-ci/integration-service/config/default?ref=7e0f27683fdc674d345ef9ea1f9628e6cab8522f
+- https://github.com/konflux-ci/integration-service/config/snapshotgc?ref=7e0f27683fdc674d345ef9ea1f9628e6cab8522f
 
 images:
 - name: quay.io/konflux-ci/integration-service
   newName: quay.io/konflux-ci/integration-service
-  newTag: fcb8e9430917906e488066bdf42e07dff7cb1818
+  newTag: 7e0f27683fdc674d345ef9ea1f9628e6cab8522f
 
 configMapGenerator:
 - name: integration-config
   literals:
     - CONSOLE_NAME="Konflux Staging"
-    - CONSOLE_URL="https://console.dev.redhat.com/application-pipeline/ns/{{ .Namespace }}/pipelinerun/{{ .PipelineRunName }}"
-    - CONSOLE_URL_TASKLOG="https://console.dev.redhat.com/application-pipeline/ns/{{ .Namespace }}/pipelinerun/{{ .PipelineRunName }}/logs/{{ .TaskName }}"
+    - CONSOLE_URL="https://konflux-ui.apps.stone-stg-rh01.l2vh.p1.openshiftapps.com/ns/{{ .Namespace }}/pipelinerun/{{ .PipelineRunName }}"
+    - CONSOLE_URL_TASKLOG="https://konflux-ui.apps.stone-stg-rh01.l2vh.p1.openshiftapps.com/ns/{{ .Namespace }}/pipelinerun/{{ .PipelineRunName }}/logs/{{ .TaskName }}"
     - INTEGRATION_NS="integration-service"
     - PAC_SECRET="pipelines-as-code-secret"
     - GITHUBAPPLICATION_ID="github-application-id"

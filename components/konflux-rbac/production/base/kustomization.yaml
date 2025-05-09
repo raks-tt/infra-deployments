@@ -4,3 +4,7 @@ resources:
   - konflux-admin-user-actions.yaml
   - konflux-maintainer-user-actions.yaml
   - konflux-contributor-user-actions.yaml
+  - konflux-viewer-user-actions.yaml
+  - ../../policies/bootstrap-tenant-namespace/
+  - ../../policies/restrict-binding-system-authenticated/
+  - ../../policies/validate-rolebindings/

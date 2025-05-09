@@ -20,12 +20,16 @@ data:
     linux-mxlarge/arm64,\
     linux-m2xlarge/amd64,\
     linux-m2xlarge/arm64,\
+    linux-d160-m2xlarge/amd64,\
+    linux-d160-m2xlarge/arm64,\
     linux-m4xlarge/amd64,\
-    linux-d160-m4xlarge/amd64,\
     linux-m4xlarge/arm64,\
+    linux-d160-m4xlarge/amd64,\
     linux-d160-m4xlarge/arm64,\
     linux-m8xlarge/amd64,\
     linux-m8xlarge/arm64,\
+    linux-d160-m8xlarge/amd64,\
+    linux-d160-m8xlarge/arm64,\
     linux-c6gd2xlarge/arm64,\
     linux-cxlarge/amd64,\
     linux-cxlarge/arm64,\
@@ -37,13 +41,7 @@ data:
     linux-c8xlarge/arm64,\
     linux-g6xlarge/amd64,\
     linux-root/arm64,\
-    linux-root/amd64,\
-    linux/s390x,\
-    linux-d200-large/s390x,\
-    linux-large/s390x,\
-    linux/ppc64le,\
-    linux-d200-large/ppc64le,\
-    linux-large/ppc64le\
+    linux-root/amd64\
     "
   instance-tag: rhtap-prod
 
@@ -109,6 +107,20 @@ data:
   dynamic.linux-m2xlarge-arm64.subnet-id: subnet-0aa719a6c5b602b16
   dynamic.linux-m2xlarge-arm64.allocation-timeout: "1200"
 
+  dynamic.linux-d160-m2xlarge-arm64.type: aws
+  dynamic.linux-d160-m2xlarge-arm64.region: us-east-1
+  dynamic.linux-d160-m2xlarge-arm64.ami: ami-03d6a5256a46c9feb
+  dynamic.linux-d160-m2xlarge-arm64.instance-type: m6g.2xlarge
+  dynamic.linux-d160-m2xlarge-arm64.instance-tag: prod-arm64-m2xlarge-d160
+  dynamic.linux-d160-m2xlarge-arm64.key-name: konflux-prod-int-mab01
+  dynamic.linux-d160-m2xlarge-arm64.aws-secret: aws-account
+  dynamic.linux-d160-m2xlarge-arm64.ssh-secret: aws-ssh-key
+  dynamic.linux-d160-m2xlarge-arm64.security-group-id: sg-0903aedd465be979e
+  dynamic.linux-d160-m2xlarge-arm64.max-instances: "100"
+  dynamic.linux-d160-m2xlarge-arm64.subnet-id: subnet-0aa719a6c5b602b16
+  dynamic.linux-d160-m2xlarge-arm64.allocation-timeout: "1200"
+  dynamic.linux-d160-m2xlarge-arm64.disk: "160"
+
   dynamic.linux-m4xlarge-arm64.type: aws
   dynamic.linux-m4xlarge-arm64.region: us-east-1
   dynamic.linux-m4xlarge-arm64.ami: ami-03d6a5256a46c9feb
@@ -122,7 +134,6 @@ data:
   dynamic.linux-m4xlarge-arm64.subnet-id: subnet-0aa719a6c5b602b16
   dynamic.linux-m4xlarge-arm64.allocation-timeout: "1200"
 
-  
   dynamic.linux-c6gd2xlarge-arm64.type: aws
   dynamic.linux-c6gd2xlarge-arm64.region: us-east-1
   dynamic.linux-c6gd2xlarge-arm64.ami: ami-03d6a5256a46c9feb
@@ -205,6 +216,7 @@ data:
   dynamic.linux-d160-m4xlarge-arm64.region: us-east-1
   dynamic.linux-d160-m4xlarge-arm64.ami: ami-03d6a5256a46c9feb
   dynamic.linux-d160-m4xlarge-arm64.instance-type: m6g.4xlarge
+  dynamic.linux-d160-m4xlarge-arm64.instance-tag: prod-arm64-4xlarge-d160
   dynamic.linux-d160-m4xlarge-arm64.key-name: konflux-prod-int-mab01
   dynamic.linux-d160-m4xlarge-arm64.aws-secret: aws-account
   dynamic.linux-d160-m4xlarge-arm64.ssh-secret: aws-ssh-key
@@ -226,6 +238,20 @@ data:
   dynamic.linux-m8xlarge-arm64.max-instances: "100"
   dynamic.linux-m8xlarge-arm64.subnet-id: subnet-0aa719a6c5b602b16
   dynamic.linux-m8xlarge-arm64.allocation-timeout: "1200"
+
+  dynamic.linux-d160-m8xlarge-arm64.type: aws
+  dynamic.linux-d160-m8xlarge-arm64.region: us-east-1
+  dynamic.linux-d160-m8xlarge-arm64.ami: ami-03d6a5256a46c9feb
+  dynamic.linux-d160-m8xlarge-arm64.instance-type: m6g.8xlarge
+  dynamic.linux-d160-m8xlarge-arm64.instance-tag: prod-arm64-m8xlarge-d160
+  dynamic.linux-d160-m8xlarge-arm64.key-name: konflux-prod-int-mab01
+  dynamic.linux-d160-m8xlarge-arm64.aws-secret: aws-account
+  dynamic.linux-d160-m8xlarge-arm64.ssh-secret: aws-ssh-key
+  dynamic.linux-d160-m8xlarge-arm64.security-group-id: sg-0903aedd465be979e
+  dynamic.linux-d160-m8xlarge-arm64.max-instances: "100"
+  dynamic.linux-d160-m8xlarge-arm64.subnet-id: subnet-0aa719a6c5b602b16
+  dynamic.linux-d160-m8xlarge-arm64.allocation-timeout: "1200"
+  dynamic.linux-d160-m8xlarge-arm64.disk: "160"
 
   dynamic.linux-amd64.type: aws
   dynamic.linux-amd64.region: us-east-1
@@ -279,6 +305,20 @@ data:
   dynamic.linux-m2xlarge-amd64.subnet-id: subnet-0aa719a6c5b602b16
   dynamic.linux-m2xlarge-amd64.allocation-timeout: "1200"
 
+  dynamic.linux-d160-m2xlarge-amd64.type: aws
+  dynamic.linux-d160-m2xlarge-amd64.region: us-east-1
+  dynamic.linux-d160-m2xlarge-amd64.ami: ami-026ebd4cfe2c043b2
+  dynamic.linux-d160-m2xlarge-amd64.instance-type: m6a.2xlarge
+  dynamic.linux-d160-m2xlarge-amd64.instance-tag: prod-amd64-m2xlarge-d160
+  dynamic.linux-d160-m2xlarge-amd64.key-name: konflux-prod-int-mab01
+  dynamic.linux-d160-m2xlarge-amd64.aws-secret: aws-account
+  dynamic.linux-d160-m2xlarge-amd64.ssh-secret: aws-ssh-key
+  dynamic.linux-d160-m2xlarge-amd64.security-group-id: sg-0903aedd465be979e
+  dynamic.linux-d160-m2xlarge-amd64.max-instances: "100"
+  dynamic.linux-d160-m2xlarge-amd64.subnet-id: subnet-0aa719a6c5b602b16
+  dynamic.linux-d160-m2xlarge-amd64.allocation-timeout: "1200"
+  dynamic.linux-d160-m2xlarge-amd64.disk: "160"
+
   dynamic.linux-m4xlarge-amd64.type: aws
   dynamic.linux-m4xlarge-amd64.region: us-east-1
   dynamic.linux-m4xlarge-amd64.ami: ami-026ebd4cfe2c043b2
@@ -297,6 +337,7 @@ data:
   dynamic.linux-d160-m4xlarge-amd64.region: us-east-1
   dynamic.linux-d160-m4xlarge-amd64.ami: ami-026ebd4cfe2c043b2
   dynamic.linux-d160-m4xlarge-amd64.instance-type: m6a.4xlarge
+  dynamic.linux-d160-m4xlarge-amd64.instance-tag: prod-amd64-m4xlarge-d160
   dynamic.linux-d160-m4xlarge-amd64.key-name: konflux-prod-int-mab01
   dynamic.linux-d160-m4xlarge-amd64.aws-secret: aws-account
   dynamic.linux-d160-m4xlarge-amd64.ssh-secret: aws-ssh-key
@@ -318,6 +359,20 @@ data:
   dynamic.linux-m8xlarge-amd64.max-instances: "100"
   dynamic.linux-m8xlarge-amd64.subnet-id: subnet-0aa719a6c5b602b16
   dynamic.linux-m8xlarge-amd64.allocation-timeout: "1200"
+
+  dynamic.linux-d160-m8xlarge-amd64.type: aws
+  dynamic.linux-d160-m8xlarge-amd64.region: us-east-1
+  dynamic.linux-d160-m8xlarge-amd64.ami: ami-026ebd4cfe2c043b2
+  dynamic.linux-d160-m8xlarge-amd64.instance-type: m6a.8xlarge
+  dynamic.linux-d160-m8xlarge-amd64.instance-tag: prod-amd64-m8xlarge-d160
+  dynamic.linux-d160-m8xlarge-amd64.key-name: konflux-prod-int-mab01
+  dynamic.linux-d160-m8xlarge-amd64.aws-secret: aws-account
+  dynamic.linux-d160-m8xlarge-amd64.ssh-secret: aws-ssh-key
+  dynamic.linux-d160-m8xlarge-amd64.security-group-id: sg-0903aedd465be979e
+  dynamic.linux-d160-m8xlarge-amd64.max-instances: "100"
+  dynamic.linux-d160-m8xlarge-amd64.subnet-id: subnet-0aa719a6c5b602b16
+  dynamic.linux-d160-m8xlarge-amd64.allocation-timeout: "1200"
+  dynamic.linux-d160-m8xlarge-amd64.disk: "160"
 
   # cpu:memory (1:2)
   dynamic.linux-cxlarge-arm64.type: aws
@@ -517,103 +572,151 @@ data:
     
     --//--
 
-  ## IBM s390x with 2CPU 8GiB RAM ####
-  dynamic.linux-s390x.type: ibmz
-  dynamic.linux-s390x.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-s390x.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-s390x.vpc: "konflux-internal-prod-us-east-1"
-  dynamic.linux-s390x.key: "internal-prod-key"
-  dynamic.linux-s390x.subnet: "internal-a"
-  dynamic.linux-s390x.image-id: "r014-23be9e67-4ab2-4dc9-9a51-d56efb06943d"
-  dynamic.linux-s390x.region: "us-east-1"
-  dynamic.linux-s390x.url: "https://us-east.iaas.cloud.ibm.com/v1"
-  dynamic.linux-s390x.profile: "bz2-2x8"
-  dynamic.linux-s390x.max-instances: "30"
-  dynamic.linux-s390x.private-ip: "true"
-  dynamic.linux-s390x.allocation-timeout: "1800"
-  dynamic.linux-s390x.instance-tag: prod-s390x
+  # S390X 16vCPU / 64GiB RAM / 1TB disk
+  host.s390x-static-1.address: "10.130.79.4"
+  host.s390x-static-1.platform: "linux/s390x"
+  host.s390x-static-1.user: "root"
+  host.s390x-static-1.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-1.concurrency: "4"
 
-  ## IBM s390x with 4CPU 16GiB RAM ####
-  dynamic.linux-large-s390x.type: ibmz
-  dynamic.linux-large-s390x.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-large-s390x.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-large-s390x.vpc: "konflux-internal-prod-us-east-1"
-  dynamic.linux-large-s390x.key: "internal-prod-key"
-  dynamic.linux-large-s390x.subnet: "internal-a"
-  dynamic.linux-large-s390x.image-id: "r014-23be9e67-4ab2-4dc9-9a51-d56efb06943d"
-  dynamic.linux-large-s390x.region: "us-east-1"
-  dynamic.linux-large-s390x.url: "https://us-east.iaas.cloud.ibm.com/v1"
-  dynamic.linux-large-s390x.profile: "bz2-4x16"
-  dynamic.linux-large-s390x.max-instances: "10"
-  dynamic.linux-large-s390x.private-ip: "true"
-  dynamic.linux-large-s390x.allocation-timeout: "1800"
-  dynamic.linux-large-s390x.instance-tag: prod-s390x-large
+  host.s390x-static-2.address: "10.130.79.5"
+  host.s390x-static-2.platform: "linux/s390x"
+  host.s390x-static-2.user: "root"
+  host.s390x-static-2.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-2.concurrency: "4"
 
+  host.s390x-static-3.address: "10.130.79.6"
+  host.s390x-static-3.platform: "linux/s390x"
+  host.s390x-static-3.user: "root"
+  host.s390x-static-3.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-3.concurrency: "4"
 
-  # Same as linux-s390x-large but with 200GB disk instead of default 100GB
-  dynamic.linux-d200-large-s390x.type: ibmz
-  dynamic.linux-d200-large-s390x.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-d200-large-s390x.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-d200-large-s390x.vpc: "konflux-internal-prod-us-east-1"
-  dynamic.linux-d200-large-s390x.key: "internal-prod-key"
-  dynamic.linux-d200-large-s390x.subnet: "internal-a"
-  dynamic.linux-d200-large-s390x.image-id: "r014-23be9e67-4ab2-4dc9-9a51-d56efb06943d"
-  dynamic.linux-d200-large-s390x.region: "us-east-1"
-  dynamic.linux-d200-large-s390x.url: "https://us-east.iaas.cloud.ibm.com/v1"
-  dynamic.linux-d200-large-s390x.profile: "bz2-4x16"
-  dynamic.linux-d200-large-s390x.max-instances: "10"
-  dynamic.linux-d200-large-s390x.private-ip: "true"
-  dynamic.linux-d200-large-s390x.allocation-timeout: "1800"
-  dynamic.linux-d200-large-s390x.disk: "200"
+  host.s390x-static-4.address: "10.130.79.37"
+  host.s390x-static-4.platform: "linux/s390x"
+  host.s390x-static-4.user: "root"
+  host.s390x-static-4.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-4.concurrency: "4"
 
+  host.s390x-static-5.address: "10.130.79.36"
+  host.s390x-static-5.platform: "linux/s390x"
+  host.s390x-static-5.user: "root"
+  host.s390x-static-5.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-5.concurrency: "4"
 
-  #PPC64LE dynamic nodes
-  dynamic.linux-ppc64le.type: ibmp
-  dynamic.linux-ppc64le.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-ppc64le.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-ppc64le.key: "prod-konflux-infra"
-  dynamic.linux-ppc64le.image: "konflux-internal-prod-ppc-base-oct-04-24"
-  dynamic.linux-ppc64le.crn: "crn:v1:bluemix:public:power-iaas:wdc06:a/5cb0704ee6304413bd0b171372c0fd77:4e9dc638-7a78-4e7c-b432-e83b7010c531::"
-  dynamic.linux-ppc64le.url: "https://us-east.power-iaas.cloud.ibm.com"
-  dynamic.linux-ppc64le.network: "a6d8d6da-c412-4106-9b57-4e25541b2e7f"
-  dynamic.linux-ppc64le.system: "e980"
-  dynamic.linux-ppc64le.cores: "2"
-  dynamic.linux-ppc64le.memory: "8"
-  dynamic.linux-ppc64le.max-instances: "30"
-  dynamic.linux-ppc64le.allocation-timeout: "1800"
-  dynamic.linux-ppc64le.instance-tag: prod-ppc64le
+  host.s390x-static-6.address: "10.130.79.68"
+  host.s390x-static-6.platform: "linux/s390x"
+  host.s390x-static-6.user: "root"
+  host.s390x-static-6.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-6.concurrency: "4"
 
-  #PPC64LE Large dynamic nodes
-  dynamic.linux-large-ppc64le.type: ibmp
-  dynamic.linux-large-ppc64le.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-large-ppc64le.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-large-ppc64le.key: "prod-konflux-infra"
-  dynamic.linux-large-ppc64le.image: "konflux-internal-prod-ppc-base-oct-04-24"
-  dynamic.linux-large-ppc64le.crn: "crn:v1:bluemix:public:power-iaas:wdc06:a/5cb0704ee6304413bd0b171372c0fd77:4e9dc638-7a78-4e7c-b432-e83b7010c531::"
-  dynamic.linux-large-ppc64le.url: "https://us-east.power-iaas.cloud.ibm.com"
-  dynamic.linux-large-ppc64le.network: "a6d8d6da-c412-4106-9b57-4e25541b2e7f"
-  dynamic.linux-large-ppc64le.system: "e980"
-  dynamic.linux-large-ppc64le.cores: "4"
-  dynamic.linux-large-ppc64le.memory: "16"
-  dynamic.linux-large-ppc64le.max-instances: "10"
-  dynamic.linux-large-ppc64le.allocation-timeout: "1800"
-  dynamic.linux-large-ppc64le.instance-tag: prod-ppc64le-large
+  host.s390x-static-7.address: "10.130.79.69"
+  host.s390x-static-7.platform: "linux/s390x"
+  host.s390x-static-7.user: "root"
+  host.s390x-static-7.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-7.concurrency: "4"
 
-  # Same as linux-ppc64le-large but with 200GB disk instead of default 100GB
-  dynamic.linux-d200-large-ppc64le.type: ibmp
-  dynamic.linux-d200-large-ppc64le.ssh-secret: "internal-prod-ibm-ssh-key"
-  dynamic.linux-d200-large-ppc64le.secret: "internal-prod-ibm-api-key"
-  dynamic.linux-d200-large-ppc64le.key: "prod-konflux-infra"
-  dynamic.linux-d200-large-ppc64le.image: "konflux-internal-prod-ppc-base-oct-04-24"
-  dynamic.linux-d200-large-ppc64le.crn: "crn:v1:bluemix:public:power-iaas:wdc06:a/5cb0704ee6304413bd0b171372c0fd77:4e9dc638-7a78-4e7c-b432-e83b7010c531::"
-  dynamic.linux-d200-large-ppc64le.url: "https://us-east.power-iaas.cloud.ibm.com"
-  dynamic.linux-d200-large-ppc64le.network: "a6d8d6da-c412-4106-9b57-4e25541b2e7f"
-  dynamic.linux-d200-large-ppc64le.system: "e980"
-  dynamic.linux-d200-large-ppc64le.cores: "4"
-  dynamic.linux-d200-large-ppc64le.memory: "16"
-  dynamic.linux-d200-large-ppc64le.max-instances: "10"
-  dynamic.linux-d200-large-ppc64le.allocation-timeout: "1800"
-  dynamic.linux-d200-large-ppc64le.disk: "200"
+  host.s390x-static-8.address: "10.130.79.70"
+  host.s390x-static-8.platform: "linux/s390x"
+  host.s390x-static-8.user: "root"
+  host.s390x-static-8.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-8.concurrency: "4"
+
+  host.s390x-static-9.address: "10.130.79.71"
+  host.s390x-static-9.platform: "linux/s390x"
+  host.s390x-static-9.user: "root"
+  host.s390x-static-9.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-9.concurrency: "4"
+
+  host.s390x-static-10.address: "10.130.79.72"
+  host.s390x-static-10.platform: "linux/s390x"
+  host.s390x-static-10.user: "root"
+  host.s390x-static-10.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-10.concurrency: "4"
+
+  host.s390x-static-11.address: "10.130.79.73"
+  host.s390x-static-11.platform: "linux/s390x"
+  host.s390x-static-11.user: "root"
+  host.s390x-static-11.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-11.concurrency: "4"
+
+  host.s390x-static-12.address: "10.130.79.74"
+  host.s390x-static-12.platform: "linux/s390x"
+  host.s390x-static-12.user: "root"
+  host.s390x-static-12.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-12.concurrency: "4"
+
+  host.s390x-static-13.address: "10.130.79.75"
+  host.s390x-static-13.platform: "linux/s390x"
+  host.s390x-static-13.user: "root"
+  host.s390x-static-13.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-13.concurrency: "4"
+
+  host.s390x-static-14.address: "10.130.79.76"
+  host.s390x-static-14.platform: "linux/s390x"
+  host.s390x-static-14.user: "root"
+  host.s390x-static-14.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-14.concurrency: "4"
+
+  host.s390x-static-15.address: "10.130.79.40"
+  host.s390x-static-15.platform: "linux/s390x"
+  host.s390x-static-15.user: "root"
+  host.s390x-static-15.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-15.concurrency: "4"
+
+  host.s390x-static-16.address: "10.130.79.79"
+  host.s390x-static-16.platform: "linux/s390x"
+  host.s390x-static-16.user: "root"
+  host.s390x-static-16.secret: "ibm-s390x-static-ssh-key"
+  host.s390x-static-16.concurrency: "4"
+
+  # PPC64LE 4cores(32vCPU) / 128GiB RAM / 2TB disk
+  host.ppc64le-static-1.address: "10.130.74.90"
+  host.ppc64le-static-1.platform: "linux/ppc64le"
+  host.ppc64le-static-1.user: "root"
+  host.ppc64le-static-1.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-1.concurrency: "8"
+
+  host.ppc64le-static-2.address: "10.130.75.60"
+  host.ppc64le-static-2.platform: "linux/ppc64le"
+  host.ppc64le-static-2.user: "root"
+  host.ppc64le-static-2.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-2.concurrency: "8"
+
+  host.ppc64le-static-3.address: "10.130.73.71"
+  host.ppc64le-static-3.platform: "linux/ppc64le"
+  host.ppc64le-static-3.user: "root"
+  host.ppc64le-static-3.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-3.concurrency: "8"
+
+  host.ppc64le-static-4.address: "10.130.73.187"
+  host.ppc64le-static-4.platform: "linux/ppc64le"
+  host.ppc64le-static-4.user: "root"
+  host.ppc64le-static-4.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-4.concurrency: "8"
+
+  host.ppc64le-static-5.address: "10.130.73.142"
+  host.ppc64le-static-5.platform: "linux/ppc64le"
+  host.ppc64le-static-5.user: "root"
+  host.ppc64le-static-5.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-5.concurrency: "8"
+
+  host.ppc64le-static-6.address: "10.130.74.34"
+  host.ppc64le-static-6.platform: "linux/ppc64le"
+  host.ppc64le-static-6.user: "root"
+  host.ppc64le-static-6.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-6.concurrency: "8"
+
+  host.ppc64le-static-7.address: "10.130.73.237"
+  host.ppc64le-static-7.platform: "linux/ppc64le"
+  host.ppc64le-static-7.user: "root"
+  host.ppc64le-static-7.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-7.concurrency: "8"
+
+  host.ppc64le-static-8.address: "10.130.72.108"
+  host.ppc64le-static-8.platform: "linux/ppc64le"
+  host.ppc64le-static-8.user: "root"
+  host.ppc64le-static-8.secret: "internal-prod-ibm-ssh-key"
+  host.ppc64le-static-8.concurrency: "8"
 
   # AWS GPU Nodes
   dynamic.linux-g6xlarge-amd64.type: aws
