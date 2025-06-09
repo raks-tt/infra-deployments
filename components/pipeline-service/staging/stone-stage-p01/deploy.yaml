@@ -2465,6 +2465,8 @@ spec:
   result:
     disabled: true
   targetNamespace: openshift-pipelines
+  tektonpruner:
+    disabled: true
   trigger:
     options:
       configMaps:
@@ -2509,7 +2511,7 @@ metadata:
   namespace: openshift-marketplace
 spec:
   displayName: custom-operators
-  image: quay.io/openshift-pipeline/pipelines-index-4.15@sha256:64a745bfa289594f0eeb9c6af7646a0b9ab6072da0f2ec909441aa14ae82acf9
+  image: quay.io/openshift-pipeline/pipelines-index-4.15@sha256:db312343f87ba00b0a8e3573f0001428d5a32ab4b010b9980f12d5cebaf60211
   sourceType: grpc
   updateStrategy:
     registryPoll:
