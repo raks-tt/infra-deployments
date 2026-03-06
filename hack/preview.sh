@@ -894,14 +894,17 @@ log_success "All ArgoCD patch files updated"
 if $OBO; then
     log_step "Enabling Observability (OBO) components"
     log_info "Adding Observability operator and Prometheus for federation"
-    yq -i '.resources += ["monitoringstack/"]' $ROOT/components/monitoring/prometheus/development/kustomization.yaml
-    log_success "Observability components enabled"
+    if ! grep -q "monitoringstack/" "$ROOT/components/monitoring/prometheus/development/kustomization.yaml"; then
+        yq -i '.resources += ["monitoringstack/"]' "$ROOT/components/monitoring/prometheus/development/kustomization.yaml"
+        log_success "Observability components enabled"
+    else
+        log_info "monitoringstack/ already present in kustomization.yaml, skipping"
+    fi
 fi
 
 if $GRAFANA; then
     log_step "Enabling Grafana dashboard"
     log_info "Removing monitoring-workload-grafana from delete-applications.yaml"
-    local delete_file="$ROOT/argo-cd-apps/overlays/development/delete-applications.yaml"
     yq -i 'select(.metadata.name != "monitoring-workload-grafana")' \
         "$ROOT/argo-cd-apps/overlays/development/delete-applications.yaml"
     log_success "Grafana enabled: monitoring-workload-grafana will be deployed"
